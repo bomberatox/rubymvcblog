@@ -1,24 +1,20 @@
-# README
+### Site criado em conjunto com curso de ruby
+> Status: Incompleto ⚠️
+### Sistema CRUD com função de Blog criado utilizando Ruby on rails no padrão MVC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Regras do Desenvolvimento:
++ Padrão MVC (Model, View, Controller), separação de camadas e responsabilidades.
++ Banco de dados utilizando SQLite.
 
-Things you may want to cover:
+## Descrição de telas:
+|Tela|Função|
+|----------------|------------------------------------------------|
+|Dashboard|Tela de início|
 
-* Ruby version
+## Tecnologias utilizadas:
++ Ruby.
++ MySql.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Instruções de instalação:
+1) Clone o repositório.
+2) Execute os testes.
