@@ -1,20 +1,22 @@
-### Site criado em conjunto com curso de ruby
-> Status: Incompleto ⚠️
-### Sistema CRUD com função de Blog criado utilizando Ruby on rails no padrão MVC
+### Website created using CRUD and MVC pattern along with the Ruby course
+> Status: Incomplete ⚠️
 
-## Regras do Desenvolvimento:
-+ Padrão MVC (Model, View, Controller), separação de camadas e responsabilidades.
-+ Banco de dados utilizando SQLite.
+## Development rules:
++ MVC pattern (Model, View, Controller).
++ Database using SQLite.
 
-## Descrição de telas:
-|Tela|Função|
+## Screens description:
+|Screen|Function|
 |----------------|------------------------------------------------|
-|Dashboard|Tela de início|
+|Articles|Home page|
 
-## Tecnologias utilizadas:
+## Languages used:
 + Ruby.
-+ MySql.
++ Sql.
 
-## Instruções de instalação:
-1) Clone o repositório.
-2) Execute os testes.
+## Instalation instructions:
+1) Clone the repository.
+2) Open the project on your IDE.
+3) Open the terminal.
+4) Type "rails s"
+5) Open the website on your browser (By default it's localhost:3000)
