@@ -1,0 +1,544 @@
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (76.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (57.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20220714153822)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220714153822"]]
+  [1m[36mTRANSACTION (105.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-14 15:39:42.866645"], ["updated_at", "2022-07-14 15:39:42.866645"]]
+  [1m[36mTRANSACTION (58.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-14 12:40:23 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.4ms | Allocations: 449)
+Completed 200 OK in 53ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 3692)
+
+
+Started GET "/Products" for 127.0.0.1 at 2022-07-14 12:40:31 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Products"):
+  
+Started GET "/products_path" for 127.0.0.1 at 2022-07-14 12:41:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/products_path"):
+  
+Started GET "/products" for 127.0.0.1 at 2022-07-14 12:41:53 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1072)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:93
+				throw err;
+				^
+
+Error: Cannot find module '@rails/webpacker'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/environment.js:1:87)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/development.js:3:21)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at WEBPACK_OPTIONS (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:114:13)
+    at requireConfig (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:116:6)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:123:17
+    at Array.forEach (<anonymous>)
+    at module.exports (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:121:15)
+    at yargs.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:71:45)
+    at Object.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/yargs/yargs.js:576:18)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:49:8
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:366:3)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+
+  Rendered layout layouts/application.html.erb (Duration: 1738.5ms | Allocations: 21690)
+Completed 500 Internal Server Error in 1747ms (ActiveRecord: 0.8ms | Allocations: 23184)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/mateus/projetos/ruby/projeto_mvc/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/Products" for 127.0.0.1 at 2022-07-14 12:42:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Products"):
+  
+Started GET "/new_product_path" for 127.0.0.1 at 2022-07-14 12:43:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/new_product_path"):
+  
+Started GET "/Products/new" for 127.0.0.1 at 2022-07-14 12:43:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Products/new"):
+  
+Started GET "/products/new" for 127.0.0.1 at 2022-07-14 12:43:53 -0300
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 18.5ms | Allocations: 6867)
+  Rendered products/new.html.erb within layouts/application (Duration: 19.5ms | Allocations: 7219)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:93
+				throw err;
+				^
+
+Error: Cannot find module '@rails/webpacker'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/environment.js:1:87)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/development.js:3:21)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at WEBPACK_OPTIONS (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:114:13)
+    at requireConfig (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:116:6)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:123:17
+    at Array.forEach (<anonymous>)
+    at module.exports (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:121:15)
+    at yargs.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:71:45)
+    at Object.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/yargs/yargs.js:576:18)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:49:8
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:366:3)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+
+  Rendered layout layouts/application.html.erb (Duration: 1509.2ms | Allocations: 11964)
+Completed 500 Internal Server Error in 1528ms (ActiveRecord: 1.3ms | Allocations: 14972)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/mateus/projetos/ruby/projeto_mvc/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/products" for 127.0.0.1 at 2022-07-14 12:44:38 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 712)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:93
+				throw err;
+				^
+
+Error: Cannot find module '@rails/webpacker'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/environment.js:1:87)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/development.js:3:21)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at WEBPACK_OPTIONS (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:114:13)
+    at requireConfig (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:116:6)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:123:17
+    at Array.forEach (<anonymous>)
+    at module.exports (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:121:15)
+    at yargs.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:71:45)
+    at Object.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/yargs/yargs.js:576:18)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:49:8
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:366:3)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+
+  Rendered layout layouts/application.html.erb (Duration: 1468.2ms | Allocations: 5537)
+Completed 500 Internal Server Error in 1470ms (ActiveRecord: 0.1ms | Allocations: 5849)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/mateus/projetos/ruby/projeto_mvc/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 127.0.0.1 at 2022-07-14 12:49:15 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.4ms | Allocations: 337)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 2503)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-14 12:49:47 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1021)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:93
+				throw err;
+				^
+
+Error: Cannot find module '@rails/webpacker'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:562:25)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/environment.js:1:87)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/config/webpack/development.js:3:21)
+    at Module._compile (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/mateus/projetos/ruby/projeto_mvc/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at WEBPACK_OPTIONS (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:114:13)
+    at requireConfig (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:116:6)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:123:17
+    at Array.forEach (<anonymous>)
+    at module.exports (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/utils/convert-argv.js:121:15)
+    at yargs.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:71:45)
+    at Object.parse (/home/mateus/projetos/ruby/projeto_mvc/node_modules/yargs/yargs.js:576:18)
+    at /home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:49:8
+    at Object.<anonymous> (/home/mateus/projetos/ruby/projeto_mvc/node_modules/webpack-cli/bin/cli.js:366:3)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+
+  Rendered layout layouts/application.html.erb (Duration: 1688.6ms | Allocations: 9141)
+Completed 500 Internal Server Error in 1692ms (ActiveRecord: 0.3ms | Allocations: 10495)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/mateus/projetos/ruby/projeto_mvc/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/Products" for 127.0.0.1 at 2022-07-14 13:12:34 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/Products"):
+  
+Started GET "/products" for 127.0.0.1 at 2022-07-14 13:12:41 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1069)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/mateus/projetos/ruby/projeto_mvc/public/packs
+[Webpacker] Hash: 0fe7dcd9d8f9ebcf52de
+Version: webpack 4.46.0
+Time: 606ms
+Built at: 14/07/2022 13:12:43
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2e212f7c8f867558ac6e.js    121 KiB  application  [emitted] [immutable]  application
+js/application-2e212f7c8f867558ac6e.js.map    136 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-2e212f7c8f867558ac6e.js js/application-2e212f7c8f867558ac6e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 1908.4ms | Allocations: 7815)
+Completed 200 OK in 1922ms (Views: 1911.8ms | ActiveRecord: 0.2ms | Allocations: 10073)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2022-07-14 13:12:48 -0300
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 33.0ms | Allocations: 2480)
+  Rendered products/new.html.erb within layouts/application (Duration: 43.1ms | Allocations: 2841)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 5931)
+Completed 200 OK in 100ms (Views: 88.9ms | ActiveRecord: 0.6ms | Allocations: 9032)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-07-14 13:13:22 -0300
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Pré treino"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pré treino"], ["created_at", "2022-07-14 16:13:22.896100"], ["updated_at", "2022-07-14 16:13:22.896100"]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (108.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 177ms (ActiveRecord: 109.5ms | Allocations: 4862)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2022-07-14 13:13:23 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 88.1ms | Allocations: 3497)
+Completed 200 OK in 150ms (Views: 96.9ms | ActiveRecord: 0.8ms | Allocations: 7319)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2022-07-14 13:13:28 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.6ms | Allocations: 739)
+  Rendered products/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1018)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4097)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.1ms | Allocations: 5151)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2022-07-14 13:13:37 -0300
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Pré treino No control"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Update (4.8ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Pré treino No control"], ["updated_at", "2022-07-14 16:13:37.836340"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (112.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 145ms (ActiveRecord: 118.0ms | Allocations: 5294)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2022-07-14 13:13:37 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 3201)
+Completed 200 OK in 37ms (Views: 29.0ms | ActiveRecord: 0.7ms | Allocations: 4133)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-14 13:13:41 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3946)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 4340)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2022-07-14 13:13:43 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 3199)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.1ms | Allocations: 4143)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-14 13:13:44 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3936)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 4331)
+
+
+Started DELETE "/products/1" for 127.0.0.1 at 2022-07-14 13:13:50 -0300
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:52:in `destroy'
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/products_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (79.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 101ms (ActiveRecord: 79.9ms | Allocations: 4711)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-14 13:13:50 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 713)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 3792)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.7ms | Allocations: 4191)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-14 13:35:49 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:14
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 4521)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 1.8ms | Allocations: 4923)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-07-14 17:38:54 -0300
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (14.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 24.5ms | Allocations: 1238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 135.4ms | Allocations: 20874)
+Completed 200 OK in 156ms (Views: 130.4ms | ActiveRecord: 14.7ms | Allocations: 24854)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20220714153822)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (11.4ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220714153822"]]
+  [1m[36mTRANSACTION (115.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
