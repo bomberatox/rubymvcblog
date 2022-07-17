@@ -1,24 +1,22 @@
-# README
+### Website created using CRUD and MVC pattern along with the Ruby course
+> Status: Incomplete ⚠️
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development rules:
++ MVC pattern (Model, View, Controller).
++ Database using SQLite.
 
-Things you may want to cover:
+## Screens description:
+|Screen|Function|
+|----------------|------------------------------------------------|
+|Articles|Home page|
 
-* Ruby version
+## Languages used:
++ Ruby.
++ Sql.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Instalation instructions:
+1) Clone the repository.
+2) Open the project on your IDE.
+3) Open the terminal.
+4) Type "rails s"
+5) Open the website on your browser (By default it's localhost:3000)
