@@ -15,6 +15,7 @@
 |Index|Home page|
 |Show|Show article title and text|
 |New|Form page for a new article|
+|Edit|Form page for a updating an article|
 
 ## Languages used:
 + Ruby.
