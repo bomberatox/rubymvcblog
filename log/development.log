@@ -2073,3 +2073,432 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.1ms | Allocations: 4340)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:03:30 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 55.7ms | Allocations: 4249)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/mateus/projetos/ruby/projeto_mvc/public/packs
+[Webpacker] Hash: 0fe7dcd9d8f9ebcf52de
+Version: webpack 4.46.0
+Time: 3726ms
+Built at: 18/07/2022 20:03:42
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2e212f7c8f867558ac6e.js    121 KiB  application  [emitted] [immutable]  application
+js/application-2e212f7c8f867558ac6e.js.map    136 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-2e212f7c8f867558ac6e.js js/application-2e212f7c8f867558ac6e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 11504.5ms | Allocations: 11031)
+Completed 200 OK in 11547ms (Views: 11521.5ms | ActiveRecord: 3.7ms | Allocations: 14115)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:06:29 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 1020)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 4283)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.1ms | Allocations: 5395)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:07:00 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1018)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4279)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.1ms | Allocations: 5378)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:11:36 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1017)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: ca67a5ce3c19c366bda4
+Version: webpack 4.46.0
+Time: 3687ms
+Built at: 18/07/2022 20:11:42
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-400d7ee33a4d45d03c96.js    275 KiB  application  [emitted] [immutable]  application
+js/application-400d7ee33a4d45d03c96.js.map    317 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-400d7ee33a4d45d03c96.js js/application-400d7ee33a4d45d03c96.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 549 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 297 bytes {application} [built] [failed] [1 error]
+    + 5 hidden modules
+
+ERROR in ./app/javascript/stylesheets/application.scss (./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import '~bootstrap/css/bootstrap'
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  app/javascript/stylesheets/application.scss 1:9  root stylesheet
+ @ ./app/javascript/stylesheets/application.scss 2:26-228
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/bootstrap/dist/js/bootstrap.esm.js
+Module not found: Error: Can't resolve '@popperjs/core' in '/home/mateus/projetos/ruby/projeto_mvc/node_modules/bootstrap/dist/js'
+ @ ./node_modules/bootstrap/dist/js/bootstrap.esm.js 24:0-41 2155:15-21 2172:19-38 3616:15-21 3756:21-40
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 5759.2ms | Allocations: 12029)
+Completed 200 OK in 5771ms (Views: 5762.1ms | ActiveRecord: 0.1ms | Allocations: 13128)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:15:05 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4306)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.2ms | Allocations: 5418)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:20:16 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 4273)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 4553b17cb2164694a490
+Version: webpack 4.46.0
+Time: 2933ms
+Built at: 18/07/2022 20:20:22
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fa3e2493ff40b4dabebf.js    434 KiB  application  [emitted] [immutable]  application
+js/application-fa3e2493ff40b4dabebf.js.map    413 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-fa3e2493ff40b4dabebf.js js/application-fa3e2493ff40b4dabebf.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 549 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 297 bytes {application} [built] [failed] [1 error]
+    + 63 hidden modules
+
+ERROR in ./app/javascript/stylesheets/application.scss (./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import '~bootstrap/css/bootstrap'
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  app/javascript/stylesheets/application.scss 1:9  root stylesheet
+ @ ./app/javascript/stylesheets/application.scss 2:26-228
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 5483.0ms | Allocations: 14361)
+Completed 200 OK in 5515ms (Views: 5485.9ms | ActiveRecord: 3.1ms | Allocations: 17445)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:20:30 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 3936)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.1ms | Allocations: 4339)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:24:32 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 836)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 9bd2690877ba38368f29
+Version: webpack 4.46.0
+Time: 1095ms
+Built at: 18/07/2022 20:24:34
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-63e834793a4532746ff5.js    434 KiB  application  [emitted] [immutable]  application
+js/application-63e834793a4532746ff5.js.map    413 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-63e834793a4532746ff5.js js/application-63e834793a4532746ff5.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 585 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 297 bytes {application} [built] [failed] [1 error]
+    + 63 hidden modules
+
+ERROR in ./app/javascript/stylesheets/application.scss (./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import '~bootstrap/css/bootstrap'
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  app/javascript/stylesheets/application.scss 1:9  root stylesheet
+ @ ./app/javascript/stylesheets/application.scss 2:26-228
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/mateus/projetos/ruby/projeto_mvc/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 2318.8ms | Allocations: 5099)
+Completed 200 OK in 2320ms (Views: 2319.1ms | ActiveRecord: 0.1ms | Allocations: 5490)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:24:52 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 844)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: d65b0fa6539c8a23ff52
+Version: webpack 4.46.0
+Time: 1178ms
+Built at: 18/07/2022 20:24:54
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d19230981f7439ed4b82.js    435 KiB  application  [emitted] [immutable]  application
+js/application-d19230981f7439ed4b82.js.map    414 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d19230981f7439ed4b82.js js/application-d19230981f7439ed4b82.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.11 KiB {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 297 bytes {application} [built] [failed] [1 error]
+    + 63 hidden modules
+
+ERROR in ./app/javascript/stylesheets/application.scss (./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import '~bootstrap/css/bootstrap'
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  app/javascript/stylesheets/application.scss 1:9  root stylesheet
+ @ ./app/javascript/stylesheets/application.scss 2:26-228
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/home/mateus/projetos/ruby/projeto_mvc/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 2475.5ms | Allocations: 5111)
+Completed 200 OK in 2477ms (Views: 2475.7ms | ActiveRecord: 0.3ms | Allocations: 5513)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:26:22 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 21.2ms | Allocations: 4273)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b338a0be0c8d9ac4704a
+Version: webpack 4.46.0
+Time: 1951ms
+Built at: 18/07/2022 20:26:25
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-616bec01f80e43482310.js    742 KiB  application  [emitted] [immutable]  application
+js/application-616bec01f80e43482310.js.map    779 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-616bec01f80e43482310.js js/application-616bec01f80e43482310.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.11 KiB {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 297 bytes {application} [built] [failed] [1 error]
+    + 64 hidden modules
+
+ERROR in ./app/javascript/stylesheets/application.scss (./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import '~bootstrap/css/bootstrap'
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  app/javascript/stylesheets/application.scss 1:9  root stylesheet
+ @ ./app/javascript/stylesheets/application.scss 2:26-228
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 3124.0ms | Allocations: 10927)
+Completed 200 OK in 3147ms (Views: 3122.9ms | ActiveRecord: 3.4ms | Allocations: 14011)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:27:18 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 851)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/mateus/projetos/ruby/projeto_mvc/public/packs
+[Webpacker] Hash: 0ab002a1f3cedd25315b
+Version: webpack 4.46.0
+Time: 7415ms
+Built at: 18/07/2022 20:27:27
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-6d3213248e08162fdbb4.js   1.45 MiB  application  [emitted] [immutable]  application
+js/application-6d3213248e08162fdbb4.js.map   1.51 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-6d3213248e08162fdbb4.js js/application-6d3213248e08162fdbb4.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.11 KiB {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 737 KiB {application} [built]
+    + 65 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 8871.1ms | Allocations: 5220)
+Completed 200 OK in 8873ms (Views: 8871.7ms | ActiveRecord: 0.1ms | Allocations: 5623)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:30:01 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1007)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4285)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 5384)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:31:01 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1002)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4282)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.2ms | Allocations: 5394)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:35:14 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4279)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.1ms | Allocations: 5378)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:37:59 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4313)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.1ms | Allocations: 5413)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:41:32 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 141)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 112)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4954)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 6059)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:44:12 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_topnavbar.html.erb (Duration: 1.6ms | Allocations: 39)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 14789)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.5ms | Allocations: 15181)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:44:46 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 142)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | Allocations: 13595)
+Completed 200 OK in 51ms (Views: 50.4ms | ActiveRecord: 0.2ms | Allocations: 14694)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-18 20:45:01 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 4207)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.7ms | Allocations: 4610)
+
+
