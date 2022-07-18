@@ -9,6 +9,7 @@
 |Screen|Function|
 |----------------|------------------------------------------------|
 |Articles|Home page|
+|Show|Show article title and text|
 
 ## Languages used:
 + Ruby.
