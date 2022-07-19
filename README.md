@@ -9,6 +9,7 @@
 + Title must have at least 5 characters.
 + Body must have at least 10 characters.
 + Category name must have at least 3 characters.
++ User authentication using devise gem.
 
 ## Screens description:
 |Screen|Function|
@@ -18,6 +19,8 @@
 |Show|Shows article content and edit/delete buttons|
 |New|Form page for a new content|
 |Edit|Form page for a updating an content|
+|Login|Form page for logging on a existing account|
+|Sign up|Form page for creating a new account|
 
 ## Languages used:
 + Ruby.
