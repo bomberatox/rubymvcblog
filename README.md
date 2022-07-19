@@ -5,17 +5,19 @@
 + MVC pattern (Model, View, Controller).
 + Clean architecture.
 + Database using SQLite.
-+ Article data can't be blank.
++ Data can't be blank.
 + Title must have at least 5 characters.
 + Body must have at least 10 characters.
++ Category name must have at least 3 characters.
 
 ## Screens description:
 |Screen|Function|
-|----------------|------------------------------------------------|
+|----------------|--------------------------------------------------|
 |Index|Home page|
+|Categories|Categories index with create/edit/delete buttons|
 |Show|Shows article content and edit/delete buttons|
-|New|Form page for a new article|
-|Edit|Form page for a updating an article|
+|New|Form page for a new content|
+|Edit|Form page for a updating an content|
 
 ## Languages used:
 + Ruby.
