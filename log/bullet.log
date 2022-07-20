@@ -1,0 +1,64 @@
+2022-07-20 19:51:24[WARN] user: mateus
+GET /?category=Ruby+on+Rails
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_medium_featured.html.erb:4:in `_app_views_articles__medium_featured_html_erb__1688565780046697546_22400'
+  /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
+
+2022-07-20 19:51:24[WARN] user: mateus
+GET /?category=Ruby+on+Rails
+USE eager loading detected
+  Article => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_article_detail.html.erb:2:in `_app_views_articles__article_detail_html_erb__159503526413022085_22460'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_medium_featured.html.erb:6:in `_app_views_articles__medium_featured_html_erb__1688565780046697546_22400'
+  /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
+
+2022-07-20 19:51:58[WARN] user: mateus
+GET /
+USE eager loading detected
+  Article => [:category]
+  Add to your query: .includes([:category])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_medium_featured.html.erb:4:in `_app_views_articles__medium_featured_html_erb__1688565780046697546_22400'
+  /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
+
+2022-07-20 19:51:58[WARN] user: mateus
+GET /
+USE eager loading detected
+  Article => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_article_detail.html.erb:2:in `_app_views_articles__article_detail_html_erb__159503526413022085_22460'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_medium_featured.html.erb:6:in `_app_views_articles__medium_featured_html_erb__1688565780046697546_22400'
+  /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
+
+2022-07-20 19:53:55[WARN] user: mateus
+GET /
+USE eager loading detected
+  Article => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_article_detail.html.erb:2:in `_app_views_articles__article_detail_html_erb__159503526413022085_22460'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_medium_featured.html.erb:6:in `_app_views_articles__medium_featured_html_erb__1688565780046697546_22400'
+  /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
+
+2022-07-20 19:55:10[WARN] user: mateus
+GET /
+USE eager loading detected
+  Article => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_article_detail.html.erb:2:in `_app_views_articles__article_detail_html_erb__159503526413022085_22460'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/_medium_featured.html.erb:6:in `_app_views_articles__medium_featured_html_erb__1688565780046697546_22400'
+  /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
+

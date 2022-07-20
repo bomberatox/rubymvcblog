@@ -22,6 +22,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem "letter_opener", "~> 1.8"
+  gem "bullet", "~> 7.0"
 end
 
 group :test do
