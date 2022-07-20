@@ -1,4 +1,4 @@
-### Website created using CRUD and MVC pattern along with the Ruby course
+### Website created using CRUD and MVC pattern along with a Ruby course
 > Status: Incomplete ⚠️
 
 ## Development rules:
@@ -10,6 +10,9 @@
 + Body must have at least 10 characters.
 + Category name must have at least 3 characters.
 + User authentication using devise gem.
++ Only the user who created the post can edit or delete it.
++ Only admin can access category management.
++ Moderator can also access category management but can't delete.
 
 ## Screens description:
 |Screen|Function|
