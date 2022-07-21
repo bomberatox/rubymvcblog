@@ -19,7 +19,7 @@
 |----------------|--------------------------------------------------|
 |Index|Home page|
 |Categories|Categories index with create/edit/delete buttons|
-|Show|Shows article content and edit/delete buttons|
+|Show|Shows article content, edit/delete buttons, and comment section|
 |New|Form page for a new content|
 |Edit|Form page for a updating an content|
 |Login|Form page for logging on a existing account|

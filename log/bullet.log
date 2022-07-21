@@ -62,3 +62,21 @@ Call stack
   /home/mateus/projetos/ruby/projeto_mvc/app/helpers/application_helper.rb:3:in `render_if'
   /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/index.html.erb:3:in `_app_views_articles_index_html_erb__2159853102484758016_22360'
 
+2022-07-21 12:58:47[WARN] user: mateus
+GET /articles/69
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/show.html.erb:16:in `block in _app_views_articles_show_html_erb___4342921235330834631_27900'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/show.html.erb:12:in `_app_views_articles_show_html_erb___4342921235330834631_27900'
+
+2022-07-21 13:01:47[WARN] user: mateus
+GET /articles/69
+USE eager loading detected
+  Comment => [:user]
+  Add to your query: .includes([:user])
+Call stack
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/show.html.erb:16:in `block in _app_views_articles_show_html_erb___4342921235330834631_27900'
+  /home/mateus/projetos/ruby/projeto_mvc/app/views/articles/show.html.erb:12:in `_app_views_articles_show_html_erb___4342921235330834631_27900'
+
