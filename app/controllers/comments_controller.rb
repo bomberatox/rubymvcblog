@@ -7,6 +7,14 @@ class CommentsController < ApplicationController
     redirect_to article_path(@article), notice: 'Comment was successfuly created.'
   end
 
+  def destroy
+    comment = @article.comments.find(params[:id])
+    authorize comment
+
+    comment.destroy
+    redirect_to article_path(@article), notice: 'Comment was successfuly deleted.'
+  end
+
   private
 
   def comment_params

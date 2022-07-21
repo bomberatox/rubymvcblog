@@ -10,7 +10,7 @@
 + Body must have at least 10 characters.
 + Category name must have at least 3 characters.
 + User authentication using devise gem.
-+ Only the user who created the post can edit or delete it.
++ Only the user who created the article/comment can edit or delete it.
 + Only admin can access category management.
 + Moderator can also access category management but can't delete.
 
@@ -26,11 +26,32 @@
 |Sign up|Form page for creating a new account|
 
 ## Languages used:
-+ Ruby.
-+ Sql.
+|Ruby version|2.7.0|
+|----------------|--------------------------------------------------|
+|Rails version|6.1.4|
+|Database|SQLite3 (dev)|
 
 ## Instalation instructions:
-1) Clone the repository.
-2) Open the terminal on the project root file.
-3) Type "rails s".
-4) Open the website on your browser (By default the link is localhost:3000).
+```
+#Clone the repository.
+git clone https://github.com/mateusflorez/rubymvcblog.git
+
+#Open the terminal on the project root file.
+cd rubymvcblog
+
+#Install Ruby on Rails dependencies
+bundle install
+
+#Install Node dependencies
+yarn install
+
+#Create the development and test databases
+rails db:create
+
+#Create the tables
+rails db:migrate
+
+#Run the project
+rails s
+```
+Open the browser at the address `localhost:3000`.

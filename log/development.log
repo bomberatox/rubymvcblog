@@ -20457,3 +20457,680 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 55ms (Views: 31.6ms | ActiveRecord: 2.4ms | Allocations: 20399)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-21 13:59:52 -0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/mateus/projetos/ruby/projeto_mvc/app/controllers/application_controller.rb:2)
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/category.rb:6:in `block in <class:Category>'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 10], ["id", 8]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 3], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, strftime('%Y-%m-01', "articles"."created_at") AS strftime_y_m_01_articles_created_at FROM "articles" WHERE ("articles"."created_at" IS NOT NULL) GROUP BY strftime('%Y-%m-01', "articles"."created_at")[0m
+  ↳ app/controllers/articles_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_longer_featured.html.erb (Duration: 0.5ms | Allocations: 162)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 281)
+  Rendered articles/_medium_featured.html.erb (Duration: 0.9ms | Allocations: 553)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 249)
+  Rendered articles/_medium_featured.html.erb (Duration: 0.8ms | Allocations: 491)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:11
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (id NOT IN (211,69,89)) ORDER BY "articles"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 5], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 1.0ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.8ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.0ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.1ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 1.3ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.7ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 1.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 251)
+  Rendered collection of articles/_article.html.erb [10 times] (Duration: 23.7ms | Allocations: 5834)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE (id NOT IN (211,69,89))[0m
+  ↳ app/views/articles/_pagination.html.erb:2
+  Rendered articles/_pagination.html.erb (Duration: 3.5ms | Allocations: 1596)
+  Rendered articles/_about.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered articles/_archives.html.erb (Duration: 2.6ms | Allocations: 885)
+  Rendered articles/_elsewhere.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered articles/_right_side.html.erb (Duration: 4.2ms | Allocations: 1158)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 57.6ms | Allocations: 18642)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.4ms | Allocations: 141)
+  Rendered layouts/_topnavbar.html.erb (Duration: 2.5ms | Allocations: 476)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.3ms | Allocations: 56)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 67.6ms | Allocations: 22545)
+Completed 200 OK in 151ms (Views: 66.5ms | ActiveRecord: 4.7ms | Allocations: 45845)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-07-21 13:59:54 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms | Allocations: 2329)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-21 13:59:54 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 10], ["id", 8]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 3], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, strftime('%Y-%m-01', "articles"."created_at") AS strftime_y_m_01_articles_created_at FROM "articles" WHERE ("articles"."created_at" IS NOT NULL) GROUP BY strftime('%Y-%m-01', "articles"."created_at")[0m
+  ↳ app/controllers/articles_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_longer_featured.html.erb (Duration: 0.3ms | Allocations: 105)
+  Rendered articles/_article_detail.html.erb (Duration: 0.3ms | Allocations: 250)
+  Rendered articles/_medium_featured.html.erb (Duration: 0.9ms | Allocations: 493)
+  Rendered articles/_article_detail.html.erb (Duration: 0.3ms | Allocations: 249)
+  Rendered articles/_medium_featured.html.erb (Duration: 0.7ms | Allocations: 491)
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (id NOT IN (211,69,89)) ORDER BY "articles"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 5], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.8ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.9ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.9ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.8ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered collection of articles/_article.html.erb [10 times] (Duration: 15.0ms | Allocations: 5833)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE (id NOT IN (211,69,89))[0m
+  ↳ app/views/articles/_pagination.html.erb:2
+  Rendered articles/_pagination.html.erb (Duration: 5.9ms | Allocations: 989)
+  Rendered articles/_about.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered articles/_archives.html.erb (Duration: 1.0ms | Allocations: 883)
+  Rendered articles/_elsewhere.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered articles/_right_side.html.erb (Duration: 1.7ms | Allocations: 1156)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 50.3ms | Allocations: 16758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 308)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 60.3ms | Allocations: 20562)
+Completed 200 OK in 85ms (Views: 58.9ms | ActiveRecord: 3.7ms | Allocations: 26752)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-21 13:59:56 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 210)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 75.1ms | Allocations: 7602)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.9ms | Allocations: 138)
+  Rendered layouts/_topnavbar.html.erb (Duration: 5.2ms | Allocations: 330)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.6ms | Allocations: 56)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 93.6ms | Allocations: 11331)
+Completed 200 OK in 102ms (Views: 99.8ms | ActiveRecord: 0.0ms | Allocations: 12621)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-21 14:00:17 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 0.5ms | Allocations: 7100)
+
+
+  
+NameError (uninitialized constant #<Class:0x00007f662c016230>::CheckPasswordComplexityService):
+  
+app/models/user.rb:23:in `password_complexity'
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-21 14:01:15 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/mateus/projetos/ruby/projeto_mvc/app/controllers/application_controller.rb:2)
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 633)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 40.0ms | Allocations: 16551)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.7ms | Allocations: 348)
+  Rendered layouts/_topnavbar.html.erb (Duration: 3.8ms | Allocations: 1010)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.4ms | Allocations: 217)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered layout layouts/application.html.erb (Duration: 59.0ms | Allocations: 24601)
+Completed 200 OK in 118ms (Views: 70.4ms | ActiveRecord: 1.2ms | Allocations: 37602)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-21 14:01:27 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.1ms | Allocations: 8216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered layouts/_topnavbar.html.erb (Duration: 2.1ms | Allocations: 330)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.4ms | Allocations: 56)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 11955)
+Completed 200 OK in 320ms (Views: 66.3ms | ActiveRecord: 0.3ms | Allocations: 20034)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-21 14:03:00 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 10], ["id", 8]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 3], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, strftime('%Y-%m-01', "articles"."created_at") AS strftime_y_m_01_articles_created_at FROM "articles" WHERE ("articles"."created_at" IS NOT NULL) GROUP BY strftime('%Y-%m-01', "articles"."created_at")[0m
+  ↳ app/controllers/articles_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_longer_featured.html.erb (Duration: 2.0ms | Allocations: 297)
+  Rendered articles/_article_detail.html.erb (Duration: 4.2ms | Allocations: 394)
+  Rendered articles/_medium_featured.html.erb (Duration: 12.9ms | Allocations: 1161)
+  Rendered articles/_article_detail.html.erb (Duration: 2.2ms | Allocations: 249)
+  Rendered articles/_medium_featured.html.erb (Duration: 4.3ms | Allocations: 491)
+  [1m[36mArticle Load (1.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (id NOT IN (211,69,89)) ORDER BY "articles"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 5], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/_article_detail.html.erb (Duration: 1.2ms | Allocations: 254)
+  Rendered articles/_article_detail.html.erb (Duration: 1.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.9ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.0ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.9ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 1.1ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.1ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 2.2ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 2.6ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 251)
+  Rendered collection of articles/_article.html.erb [10 times] (Duration: 44.5ms | Allocations: 5990)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE (id NOT IN (211,69,89))[0m
+  ↳ app/views/articles/_pagination.html.erb:2
+  Rendered articles/_pagination.html.erb (Duration: 5.0ms | Allocations: 1834)
+  Rendered articles/_about.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered articles/_archives.html.erb (Duration: 6.0ms | Allocations: 1036)
+  Rendered articles/_elsewhere.html.erb (Duration: 2.1ms | Allocations: 114)
+  Rendered articles/_right_side.html.erb (Duration: 20.2ms | Allocations: 1980)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 142.1ms | Allocations: 20541)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 310)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 148.2ms | Allocations: 24280)
+Completed 200 OK in 322ms (Views: 152.4ms | ActiveRecord: 24.7ms | Allocations: 39876)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:13:50 -0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/mateus/projetos/ruby/projeto_mvc/app/controllers/application_controller.rb:2)
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 51.5ms | Allocations: 6488)
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 11.7ms | Allocations: 1635)
+  Rendered articles/show.html.erb within layouts/application (Duration: 92.4ms | Allocations: 9464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layouts/_topnavbar.html.erb (Duration: 1.6ms | Allocations: 853)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 118.1ms | Allocations: 14578)
+Completed 200 OK in 362ms (Views: 135.4ms | ActiveRecord: 10.6ms | Allocations: 36423)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-07-21 14:13:57 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.8ms | Allocations: 674)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 42.4ms | Allocations: 10239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 1.1ms | Allocations: 138)
+  Rendered layouts/_topnavbar.html.erb (Duration: 9.9ms | Allocations: 330)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 13972)
+Completed 200 OK in 89ms (Views: 85.9ms | ActiveRecord: 0.0ms | Allocations: 15799)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-07-21 14:14:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 7], ["current_sign_in_at", "2022-07-21 17:14:01.246912"], ["last_sign_in_at", "2022-07-21 16:21:10.031714"], ["updated_at", "2022-07-21 17:14:01.247642"], ["id", 3]]
+  [1m[36mTRANSACTION (60.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 395ms (ActiveRecord: 62.2ms | Allocations: 9770)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-21 14:14:01 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (14.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 10], ["id", 8]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 3], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, strftime('%Y-%m-01', "articles"."created_at") AS strftime_y_m_01_articles_created_at FROM "articles" WHERE ("articles"."created_at" IS NOT NULL) GROUP BY strftime('%Y-%m-01', "articles"."created_at")[0m
+  ↳ app/controllers/articles_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_longer_featured.html.erb (Duration: 3.2ms | Allocations: 239)
+  Rendered articles/_article_detail.html.erb (Duration: 2.4ms | Allocations: 251)
+  Rendered articles/_medium_featured.html.erb (Duration: 6.4ms | Allocations: 686)
+  Rendered articles/_article_detail.html.erb (Duration: 1.0ms | Allocations: 249)
+  Rendered articles/_medium_featured.html.erb (Duration: 2.8ms | Allocations: 491)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:11
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (id NOT IN (211,69,89)) ORDER BY "articles"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 5], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  ↳ app/views/articles/index.html.erb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/_article_detail.html.erb (Duration: 0.7ms | Allocations: 254)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.7ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 5.4ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 20.4ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.9ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 2.6ms | Allocations: 251)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered collection of articles/_article.html.erb [10 times] (Duration: 76.6ms | Allocations: 5980)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE (id NOT IN (211,69,89))[0m
+  ↳ app/views/articles/_pagination.html.erb:2
+  Rendered articles/_pagination.html.erb (Duration: 20.2ms | Allocations: 1718)
+  Rendered articles/_about.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered articles/_archives.html.erb (Duration: 1.3ms | Allocations: 1031)
+  Rendered articles/_elsewhere.html.erb (Duration: 0.3ms | Allocations: 112)
+  Rendered articles/_right_side.html.erb (Duration: 5.1ms | Allocations: 1960)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 184.0ms | Allocations: 20742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered layouts/_topnavbar.html.erb (Duration: 2.3ms | Allocations: 338)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.4ms | Allocations: 60)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 197.6ms | Allocations: 24572)
+Completed 200 OK in 302ms (Views: 196.3ms | ActiveRecord: 21.7ms | Allocations: 30978)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:04 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 17.1ms | Allocations: 2127)
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 10.1ms | Allocations: 1533)
+  Rendered comments/_form.html.erb (Duration: 16.3ms | Allocations: 3866)
+  Rendered articles/show.html.erb within layouts/application (Duration: 56.2ms | Allocations: 8466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.9ms | Allocations: 140)
+  Rendered layouts/_topnavbar.html.erb (Duration: 2.8ms | Allocations: 329)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.4ms | Allocations: 56)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 73.3ms | Allocations: 12173)
+Completed 200 OK in 112ms (Views: 73.7ms | ActiveRecord: 2.8ms | Allocations: 16840)
+
+
+Started DELETE "/articles/69/comments/1" for 127.0.0.1 at 2022-07-21 14:14:08 -0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article_id"=>"69", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `set_article'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["article_id", 69], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/policies/comment_policy.rb:7:in `destroy?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mComment Destroy (13.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (80.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+Redirected to http://localhost:3000/articles/69
+Completed 302 Found in 193ms (ActiveRecord: 95.1ms | Allocations: 8476)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:08 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 47.7ms | Allocations: 2127)
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 5.5ms | Allocations: 1192)
+  Rendered comments/_form.html.erb (Duration: 18.4ms | Allocations: 3540)
+  Rendered articles/show.html.erb within layouts/application (Duration: 88.5ms | Allocations: 7608)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.2ms | Allocations: 136)
+  Rendered layouts/_topnavbar.html.erb (Duration: 5.8ms | Allocations: 322)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.8ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 120.3ms | Allocations: 11310)
+Completed 200 OK in 199ms (Views: 123.7ms | ActiveRecord: 14.5ms | Allocations: 15828)
+
+
+Started DELETE "/articles/69/comments/4" for 127.0.0.1 at 2022-07-21 14:14:12 -0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article_id"=>"69", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (4.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `set_article'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["article_id", 69], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/policies/comment_policy.rb:7:in `destroy?'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mComment Destroy (2.5ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (67.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+Redirected to http://localhost:3000/articles/69
+Completed 302 Found in 191ms (ActiveRecord: 76.4ms | Allocations: 7781)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:13 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (3.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 46.0ms | Allocations: 2127)
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 15.3ms | Allocations: 853)
+  Rendered comments/_form.html.erb (Duration: 33.4ms | Allocations: 3547)
+  Rendered articles/show.html.erb within layouts/application (Duration: 110.5ms | Allocations: 7211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered layouts/_topnavbar.html.erb (Duration: 5.6ms | Allocations: 322)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 137.3ms | Allocations: 10929)
+Completed 200 OK in 191ms (Views: 141.0ms | ActiveRecord: 8.6ms | Allocations: 15297)
+
+
+Started DELETE "/articles/69/comments/3" for 127.0.0.1 at 2022-07-21 14:14:19 -0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article_id"=>"69", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `set_article'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["article_id", 69], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/policies/comment_policy.rb:7:in `destroy?'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mComment Destroy (8.7ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (76.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+Redirected to http://localhost:3000/articles/69
+Completed 302 Found in 129ms (ActiveRecord: 87.9ms | Allocations: 7781)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:19 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (9.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 33.7ms | Allocations: 2126)
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 13.5ms | Allocations: 450)
+  Rendered comments/_form.html.erb (Duration: 7.9ms | Allocations: 3540)
+  Rendered articles/show.html.erb within layouts/application (Duration: 83.3ms | Allocations: 6718)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered layouts/_topnavbar.html.erb (Duration: 3.1ms | Allocations: 322)
+  Rendered layouts/_flash_messages.html.erb (Duration: 1.3ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 118.1ms | Allocations: 10420)
+Completed 200 OK in 183ms (Views: 124.7ms | ActiveRecord: 11.7ms | Allocations: 14614)
+
+
+Started POST "/articles/69/comments" for 127.0.0.1 at 2022-07-21 14:14:27 -0300
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus quis varius quam quisque id diam vel. Erat pellentesque adipiscing commodo elit at imperdiet dui. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue."}, "commit"=>"Create Comment", "article_id"=>"69"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `set_article'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (7.1ms)[0m  [1m[32mINSERT INTO "comments" ("body", "article_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus quis varius quam quisque id diam vel. Erat pellentesque adipiscing commodo elit at imperdiet dui. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue."], ["article_id", 69], ["user_id", 3], ["created_at", "2022-07-21 17:14:27.780596"], ["updated_at", "2022-07-21 17:14:27.780596"]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (83.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/articles/69
+Completed 302 Found in 170ms (ActiveRecord: 91.9ms | Allocations: 8477)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:27 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 28.4ms | Allocations: 2126)
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 6.4ms | Allocations: 853)
+  Rendered comments/_form.html.erb (Duration: 14.1ms | Allocations: 3540)
+  Rendered articles/show.html.erb within layouts/application (Duration: 59.7ms | Allocations: 7204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.9ms | Allocations: 136)
+  Rendered layouts/_topnavbar.html.erb (Duration: 6.8ms | Allocations: 322)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 87.3ms | Allocations: 10915)
+Completed 200 OK in 143ms (Views: 89.2ms | ActiveRecord: 3.1ms | Allocations: 15284)
+
+
+Started POST "/articles/69/comments" for 127.0.0.1 at 2022-07-21 14:14:31 -0300
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus quis varius quam quisque id diam vel. Erat pellentesque adipiscing commodo elit at imperdiet dui. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue."}, "commit"=>"Create Comment", "article_id"=>"69"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `set_article'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (9.3ms)[0m  [1m[32mINSERT INTO "comments" ("body", "article_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus quis varius quam quisque id diam vel. Erat pellentesque adipiscing commodo elit at imperdiet dui. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue."], ["article_id", 69], ["user_id", 3], ["created_at", "2022-07-21 17:14:31.280447"], ["updated_at", "2022-07-21 17:14:31.280447"]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (78.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/articles/69
+Completed 302 Found in 157ms (ActiveRecord: 89.1ms | Allocations: 8339)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:31 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 25.4ms | Allocations: 2127)
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 7.7ms | Allocations: 1194)
+  Rendered comments/_form.html.erb (Duration: 10.2ms | Allocations: 3541)
+  Rendered articles/show.html.erb within layouts/application (Duration: 61.5ms | Allocations: 7610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered layouts/_topnavbar.html.erb (Duration: 3.8ms | Allocations: 322)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 84.6ms | Allocations: 11319)
+Completed 200 OK in 122ms (Views: 88.1ms | ActiveRecord: 3.1ms | Allocations: 15840)
+
+
+Started DELETE "/articles/69/comments/2" for 127.0.0.1 at 2022-07-21 14:14:39 -0300
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article_id"=>"69", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `set_article'
+  [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["article_id", 69], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/policies/comment_policy.rb:7:in `destroy?'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mComment Destroy (1.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (82.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `destroy'
+Redirected to http://localhost:3000/articles/69
+Completed 302 Found in 141ms (ActiveRecord: 88.7ms | Allocations: 7778)
+
+
+Started GET "/articles/69" for 127.0.0.1 at 2022-07-21 14:14:39 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"69"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 69], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 69]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:31:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:2
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article_detail.html.erb:3
+  Rendered articles/_article_detail.html.erb (Duration: 31.1ms | Allocations: 2126)
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 5.4ms | Allocations: 853)
+  Rendered comments/_form.html.erb (Duration: 23.5ms | Allocations: 3540)
+  Rendered articles/show.html.erb within layouts/application (Duration: 79.6ms | Allocations: 7203)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered layouts/_topnavbar.html.erb (Duration: 1.7ms | Allocations: 323)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.4ms | Allocations: 59)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 105.2ms | Allocations: 10924)
+Completed 200 OK in 191ms (Views: 110.6ms | ActiveRecord: 2.5ms | Allocations: 15620)
+
+
