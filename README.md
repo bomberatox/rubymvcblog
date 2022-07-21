@@ -26,8 +26,9 @@
 |Sign up|Form page for creating a new account|
 
 ## Languages used:
-|Ruby version|2.7.0|
+|||
 |----------------|--------------------------------------------------|
+|Ruby version|2.7.0|
 |Rails version|6.1.4|
 |Database|SQLite3 (dev)|
 
