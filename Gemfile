@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
-gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
@@ -13,6 +12,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -46,3 +46,5 @@ gem "pundit", "~> 2.2"
 gem "rolify", "~> 6.0"
 
 gem "groupdate", "~> 6.1"
+
+gem 'pg', '~> 1.4', '>= 1.4.1', group: :production
