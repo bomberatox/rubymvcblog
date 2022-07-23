@@ -45,6 +45,6 @@ gem "pundit", "~> 2.2"
 
 gem "rolify", "~> 6.0"
 
-gem "groupdate", "~> 6.1"
-
 gem 'pg', '~> 1.4', '>= 1.4.1', group: :production
+
+gem "groupdate", "~> 6.1"
