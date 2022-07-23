@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -53,7 +53,7 @@ Rails.application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -88,7 +88,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
@@ -118,19 +118,18 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  #Email
-  config.action_mailer.default_url_options = { host: 'blogonrails.herokuapp.com' }
+  # Email
+  config.action_mailer.default_url_options = { host: 'mvcblogonrails.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            Rails.application.credentials[:user_name].to_s,
-    password:             Rails.application.credentials[:password],
-    authentication:       'plain',
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    user_name: Rails.application.credentials[:user_name].to_s,
+    password: Rails.application.credentials[:password],
+    authentication: 'plain',
     enable_starttls_auto: true,
-    open_timeout:         5,
-    read_timeout:         5
+    open_timeout: 5,
+    read_timeout: 5
   }
-
 end
