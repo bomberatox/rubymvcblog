@@ -22723,3 +22723,213 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 1344ms (Views: 825.6ms | ActiveRecord: 102.2ms | Allocations: 94043)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-07-24 17:47:40 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/mateus/projetos/ruby/projeto_mvc/app/controllers/application_controller.rb:2)
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 0.7ms | Allocations: 15833)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 17:47:40 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 12], ["id", 8]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 3], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, strftime('%Y-%m-01', "articles"."created_at") AS strftime_y_m_01_articles_created_at FROM "articles" WHERE ("articles"."created_at" IS NOT NULL) GROUP BY strftime('%Y-%m-01', "articles"."created_at")[0m
+  ↳ app/controllers/articles_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_longer_featured.html.erb (Duration: 1.3ms | Allocations: 483)
+  Rendered articles/_article_detail.html.erb (Duration: 1.1ms | Allocations: 453)
+  Rendered articles/_medium_featured.html.erb (Duration: 3.0ms | Allocations: 1403)
+  Rendered articles/_article_detail.html.erb (Duration: 0.3ms | Allocations: 250)
+  Rendered articles/_medium_featured.html.erb (Duration: 0.9ms | Allocations: 498)
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (id NOT IN (211,69,89)) ORDER BY "articles"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:17
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 5], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  ↳ app/views/articles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/articles/index.html.erb:17
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 254)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 3.6ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 2.6ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.7ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 2.7ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered collection of articles/_article.html.erb [10 times] (Duration: 42.2ms | Allocations: 6071)
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE (id NOT IN (211,69,89))[0m
+  ↳ app/views/articles/_pagination.html.erb:2
+  Rendered articles/_pagination.html.erb (Duration: 14.5ms | Allocations: 2211)
+  Rendered articles/_about.html.erb (Duration: 0.3ms | Allocations: 110)
+  Rendered articles/_archives.html.erb (Duration: 1.7ms | Allocations: 1052)
+  Rendered articles/_elsewhere.html.erb (Duration: 0.3ms | Allocations: 114)
+  Rendered articles/_right_side.html.erb (Duration: 5.3ms | Allocations: 2031)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/articles/index.html.erb:25
+  Rendered articles/index.html.erb within layouts/application (Duration: 116.3ms | Allocations: 22707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.7ms | Allocations: 408)
+  Rendered layouts/_topnavbar.html.erb (Duration: 2.5ms | Allocations: 1226)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.7ms | Allocations: 235)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 112)
+  Rendered layout layouts/application.html.erb (Duration: 163.1ms | Allocations: 31632)
+Completed 200 OK in 250ms (Views: 163.5ms | ActiveRecord: 16.4ms | Allocations: 54752)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-24 17:47:42 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 9.7ms | Allocations: 708)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 353.3ms | Allocations: 21579)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 0.3ms | Allocations: 147)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.9ms | Allocations: 387)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.1ms | Allocations: 66)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 361.4ms | Allocations: 25485)
+Completed 200 OK in 375ms (Views: 372.0ms | ActiveRecord: 0.0ms | Allocations: 27659)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 17:47:54 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"teste3@teste3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (5.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste3@teste3.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 191)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.5ms | Allocations: 8348)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 1.3ms | Allocations: 138)
+  Rendered layouts/_topnavbar.html.erb (Duration: 5.1ms | Allocations: 364)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | Allocations: 12178)
+Completed 200 OK in 742ms (Views: 44.5ms | ActiveRecord: 5.7ms | Allocations: 22455)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 17:48:04 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"teste3@teste3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste3@teste3.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (31.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "teste3@teste3.com"], ["encrypted_password", "$2a$12$tBs5v1B0F.l4YjZW1f1Rp.id1RKIdMm.AYFK66L8kdm0X67P8BZ9W"], ["confirmation_token", "4BfAQySFMMUSYnGejBKo"], ["confirmation_sent_at", "2022-07-24 20:48:04.314167"], ["created_at", "2022-07-24 20:48:04.312936"], ["updated_at", "2022-07-24 20:48:04.312936"]]
+  [1m[36mTRANSACTION (76.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 12.1ms | Allocations: 384)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 32.2ms
+Delivered mail 62ddb004c2062_2b93557869719@mateus-pc.mail (117.0ms)
+Date: Sun, 24 Jul 2022 17:48:04 -0300
+From: devise@example.com
+Reply-To: devise@example.com
+To: teste3@teste3.com
+Message-ID: <62ddb004c2062_2b93557869719@mateus-pc.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome teste3@teste3.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=4BfAQySFMMUSYnGejBKo">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 869ms (ActiveRecord: 109.2ms | Allocations: 62815)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 17:48:04 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY "articles"."created_at" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 12], ["id", 8]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 3], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:16:in `index'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, strftime('%Y-%m-01', "articles"."created_at") AS strftime_y_m_01_articles_created_at FROM "articles" WHERE ("articles"."created_at" IS NOT NULL) GROUP BY strftime('%Y-%m-01', "articles"."created_at")[0m
+  ↳ app/controllers/articles_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_longer_featured.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered articles/_medium_featured.html.erb (Duration: 5.3ms | Allocations: 522)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 250)
+  Rendered articles/_medium_featured.html.erb (Duration: 1.2ms | Allocations: 498)
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE (id NOT IN (211,69,89)) ORDER BY "articles"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:17
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["id", 5], ["id", 9], ["id", 10], ["id", 11], ["id", 12]]
+  ↳ app/views/articles/index.html.erb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/articles/index.html.erb:17
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 254)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.4ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.6ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.9ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 253)
+  Rendered articles/_article_detail.html.erb (Duration: 0.5ms | Allocations: 252)
+  Rendered articles/_article_detail.html.erb (Duration: 1.3ms | Allocations: 252)
+  Rendered collection of articles/_article.html.erb [10 times] (Duration: 16.7ms | Allocations: 5901)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE (id NOT IN (211,69,89))[0m
+  ↳ app/views/articles/_pagination.html.erb:2
+  Rendered articles/_pagination.html.erb (Duration: 3.1ms | Allocations: 1147)
+  Rendered articles/_about.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered articles/_archives.html.erb (Duration: 1.1ms | Allocations: 884)
+  Rendered articles/_elsewhere.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered articles/_right_side.html.erb (Duration: 2.1ms | Allocations: 1172)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  ↳ app/views/articles/index.html.erb:25
+  Rendered articles/index.html.erb within layouts/application (Duration: 50.6ms | Allocations: 17475)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 1.3ms | Allocations: 138)
+  Rendered layouts/_topnavbar.html.erb (Duration: 3.1ms | Allocations: 324)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 60.6ms | Allocations: 21331)
+Completed 200 OK in 86ms (Views: 59.1ms | ActiveRecord: 3.9ms | Allocations: 28350)
+
+
+Started GET "/users/confirmation?confirmation_token=[FILTERED]" for 127.0.0.1 at 2022-07-24 17:48:07 -0300
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "4BfAQySFMMUSYnGejBKo"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2022-07-24 20:48:07.175011"], ["updated_at", "2022-07-24 20:48:07.176738"], ["id", 5]]
+  [1m[36mTRANSACTION (157.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 201ms (ActiveRecord: 158.9ms | Allocations: 8342)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-07-24 17:48:07 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 348)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 71.3ms | Allocations: 10484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_account_links.html.erb (Duration: 1.1ms | Allocations: 147)
+  Rendered layouts/_topnavbar.html.erb (Duration: 3.5ms | Allocations: 387)
+  Rendered layouts/_flash_messages.html.erb (Duration: 0.9ms | Allocations: 73)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 84.1ms | Allocations: 14756)
+Completed 200 OK in 95ms (Views: 92.4ms | ActiveRecord: 0.0ms | Allocations: 16345)
+
+
