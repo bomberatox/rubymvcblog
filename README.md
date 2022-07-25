@@ -1,5 +1,5 @@
 ### Website created using CRUD and MVC pattern along with a Ruby course
-> Status: Incomplete ⚠️
+> Status: Complete :heavy_check_mark:
 
 ## Development rules:
 + MVC pattern (Model, View, Controller).
