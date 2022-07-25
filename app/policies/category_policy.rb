@@ -14,14 +14,14 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? || user.has_role?(:moderator)
+    user&.admin? || user.has_role?(:moderator)
   end
 
   def update?
-    user.admin? || user.has_role?(:moderator)
+    user&.admin? || user.has_role?(:moderator)
   end
 
   def destroy?
-    user.admin?
+    user&.admin?
   end
 end

@@ -1,0 +1,25 @@
+en:
+  articles:
+    continue_reading: Continue reading...
+    about:
+      title: About
+      description: Hey there! My name is Mateus, im a programmer aiming to become a Ruby on Rails developer!
+    archives: Archives
+    elsewhere: Elsewhere
+    index:
+      subtitle: Newest posts
+      new_article: New Article
+    new:
+      title: New Article
+    create:
+      success: Article was successfully created.
+    update:
+      success: Article was successfully updated.
+    destroy:
+      success: Article was successfully destroyed.
+    form:
+      choose_category: Choose a Category
+    show:
+      comments: Comments
+      add_comment: "Add a comment:"
+      login_create_comment: Please, login to create a comment.

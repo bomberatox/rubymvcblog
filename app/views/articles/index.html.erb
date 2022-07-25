@@ -6,9 +6,9 @@
 <div class="row g-5">
   <div class="col-md-8">
     <h3 class="pb-4 mb-4 fst-italic border-bottom">
-      Newest posts
+      <%= t '.subtitle' %>
     </h3>
-    <p><%= link_to 'New article', new_article_path,
+    <p><%= link_to t('.new_article'), new_article_path,
     {class: 'btn btn-success',
     'data-bs-toggle':'tooltip',
     'data-bs-placement':'top',
